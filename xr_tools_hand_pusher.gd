@@ -63,5 +63,3 @@ static func find_right(node : Node) -> XRToolsHandPusher:
 		XRHelpers.get_right_controller(node),
 		"*",
 		"XRToolsHandPusher") as XRToolsHandPusher
-
-

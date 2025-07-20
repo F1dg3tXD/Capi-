@@ -4,6 +4,5 @@
 
 [resource]
 resource_name = "Empty River Bed"
-cull_mode = 2
 albedo_texture = ExtResource("1_amshw")
 texture_filter = 2

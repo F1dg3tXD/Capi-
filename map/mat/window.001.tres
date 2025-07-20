@@ -2,6 +2,7 @@
 
 [resource]
 resource_name = "window.001"
-transparency = 4
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
 blend_mode = 3
-cull_mode = 2

@@ -4,7 +4,6 @@
 
 [resource]
 resource_name = "Material"
-cull_mode = 2
 albedo_texture = ExtResource("1_bf2y6")
 emission_enabled = true
 emission_energy_multiplier = 10.0

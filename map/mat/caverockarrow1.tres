@@ -4,6 +4,5 @@
 
 [resource]
 resource_name = "caverockarrow1"
-cull_mode = 2
 albedo_texture = ExtResource("1_1qia4")
 roughness = 0.552786

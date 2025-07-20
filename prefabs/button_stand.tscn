@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ow23awdwfog"]
+
+[ext_resource type="Script" uid="uid://c7axvnhwo6cl" path="res://scripts/map_loader.gd" id="1_ird4u"]
+
+[node name="XRMapLoader" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_ird4u")
+load_button_action = "ax_button"

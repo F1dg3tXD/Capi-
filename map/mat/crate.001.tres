@@ -4,6 +4,5 @@
 
 [resource]
 resource_name = "crate.001"
-cull_mode = 2
 albedo_texture = ExtResource("1_2clpj")
 texture_filter = 2

@@ -4,7 +4,6 @@
 
 [resource]
 resource_name = "block"
-cull_mode = 2
 albedo_texture = ExtResource("1_h4sgq")
 roughness = 0.552786
 emission_enabled = true

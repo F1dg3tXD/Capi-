@@ -4,6 +4,5 @@
 
 [resource]
 resource_name = "canyon5"
-cull_mode = 2
 albedo_texture = ExtResource("1_vv5y5")
 texture_filter = 2

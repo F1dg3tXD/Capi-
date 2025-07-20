@@ -4,6 +4,5 @@
 
 [resource]
 resource_name = "Mines Wall"
-cull_mode = 2
 albedo_texture = ExtResource("1_ybj0v")
 texture_filter = 2

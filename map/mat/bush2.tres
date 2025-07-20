@@ -7,6 +7,5 @@ resource_name = "bush2"
 transparency = 3
 alpha_hash_scale = 1.0
 alpha_antialiasing_mode = 0
-cull_mode = 2
 albedo_texture = ExtResource("1_i0osv")
 texture_filter = 2

@@ -4,6 +4,5 @@
 
 [resource]
 resource_name = "bark"
-cull_mode = 2
 albedo_texture = ExtResource("1_ygf83")
 texture_filter = 2

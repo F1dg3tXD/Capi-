@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Capi"
-run/main_scene="uid://cpwjku63oopu6"
+run/main_scene="uid://dlmfp2l58fl7r"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -26,6 +26,17 @@ window/vsync/vsync_mode=0
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
+
+[global_group]
+
+Player="Main Player Group"
+
+[input]
+
+ax_button={
+"deadzone": 0.2,
+"events": []
+}
 
 [physics]
 
