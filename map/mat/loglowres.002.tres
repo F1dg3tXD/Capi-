@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b4fuq4grnkjig"]
+
+[ext_resource type="Texture2D" uid="uid://lvgre5klw81g" path="res://map/The_Entire_GTAG_Map_loglowres_62.png" id="1_dcbjg"]
+
+[resource]
+resource_name = "loglowres.002"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_dcbjg")
+texture_filter = 2

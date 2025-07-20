@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7hopepraffio"]
+
+[ext_resource type="Texture2D" uid="uid://yeohn4n3j4vl" path="res://map/The_Entire_GTAG_Map_canyon1.png" id="1_pm6t8"]
+
+[resource]
+resource_name = "canyon1"
+cull_mode = 2
+albedo_texture = ExtResource("1_pm6t8")
+texture_filter = 2

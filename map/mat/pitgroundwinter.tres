@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8skkmaokb6sb"]
+
+[ext_resource type="Texture2D" uid="uid://bg6nmtos8by5c" path="res://map/The_Entire_GTAG_Map_snowground.png" id="1_cfrpk"]
+
+[resource]
+resource_name = "pitgroundwinter"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_cfrpk")
+roughness = 0.552786

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bm2tmfnlmc6gl"]
+
+[ext_resource type="Texture2D" uid="uid://bmcqhjqujva4n" path="res://map/The_Entire_GTAG_Map_plastic_18.png" id="1_rp57e"]
+
+[resource]
+resource_name = "plastic.004"
+cull_mode = 2
+albedo_texture = ExtResource("1_rp57e")
+roughness = 0.0

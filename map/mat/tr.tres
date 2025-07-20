@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dudpih8oe7nmt"]
+
+[ext_resource type="Texture2D" uid="uid://6mtj08ox1hbu" path="res://map/The_Entire_GTAG_Map_bark_10.png" id="1_nr7eo"]
+
+[resource]
+resource_name = "tr"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_nr7eo")
+texture_filter = 2

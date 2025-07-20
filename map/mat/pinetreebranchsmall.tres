@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bttw488ptxlw4"]
+
+[ext_resource type="Texture2D" uid="uid://cqje0l1mb0jm2" path="res://map/The_Entire_GTAG_Map_pinetreebranchsmall.png" id="1_66uly"]
+
+[resource]
+resource_name = "pinetreebranchsmall"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_66uly")
+texture_filter = 2

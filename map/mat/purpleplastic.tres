@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d258iobr15e6h"]
+
+[ext_resource type="Texture2D" uid="uid://k8rk1718hqcp" path="res://map/The_Entire_GTAG_Map_purpleplastic.png" id="1_uovkw"]
+
+[resource]
+resource_name = "purpleplastic"
+cull_mode = 2
+albedo_texture = ExtResource("1_uovkw")
+texture_filter = 2

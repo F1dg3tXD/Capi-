@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dm5d5qcnx2k1o"]
+
+[ext_resource type="Texture2D" uid="uid://x7hu7xehk2n5" path="res://map/The_Entire_GTAG_Map_cosmeticsroomatlas_5.png" id="1_bl87k"]
+
+[resource]
+resource_name = "cosmeticsroomatlas.004"
+cull_mode = 2
+albedo_texture = ExtResource("1_bl87k")

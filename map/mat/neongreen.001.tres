@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blsxs3wq5e7uu"]
+
+[resource]
+resource_name = "neongreen.001"
+cull_mode = 2
+albedo_color = Color(0.5372, 0.993073, 0.269015, 1)
+roughness = 0.552786
+emission_enabled = true
+emission = Color(0.26617, 1, 0.0632556, 1)
+emission_energy_multiplier = 1.8443

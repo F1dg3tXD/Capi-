@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d06jgpxmqdt7v"]
+
+[resource]
+resource_name = "screen.003"
+cull_mode = 2
+albedo_color = Color(0.0585517, 0.404183, 0, 1)

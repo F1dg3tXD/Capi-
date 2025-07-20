@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bs5qj87scbglt"]
+
+[ext_resource type="Texture2D" uid="uid://dstuilx1kfhvg" path="res://map/The_Entire_GTAG_Map_hatlas.png" id="1_mfq45"]
+
+[resource]
+resource_name = "hatlas.001"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_mfq45")
+roughness = 0.552786

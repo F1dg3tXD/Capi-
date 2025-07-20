@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bx8me7mrljvum"]
+
+[ext_resource type="Texture2D" uid="uid://d2h7lewko2i1s" path="res://map/The_Entire_GTAG_Map_bush2.png" id="1_i0osv"]
+
+[resource]
+resource_name = "bush2"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_i0osv")
+texture_filter = 2
