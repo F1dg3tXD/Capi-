@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://crjxcc4cxqnqt"]
+
+[ext_resource type="Texture2D" uid="uid://b6eljpb0vaiwm" path="res://map/The_Entire_GTAG_Map_metalbare.png" id="1_xyv30"]
+
+[resource]
+resource_name = "metalbare"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_xyv30")
+metallic = 0.204545
+roughness = 0.0118773

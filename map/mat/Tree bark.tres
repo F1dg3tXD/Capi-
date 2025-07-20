@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c4q8k0ckp5edf"]
+
+[ext_resource type="Texture2D" uid="uid://b3rveat7qlbd8" path="res://map/The_Entire_GTAG_Map_bark.png" id="1_dtltx"]
+
+[resource]
+resource_name = "Tree bark"
+cull_mode = 2
+albedo_texture = ExtResource("1_dtltx")
+texture_filter = 2

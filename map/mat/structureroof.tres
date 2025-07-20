@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cguma3d40q7ef"]
+
+[ext_resource type="Texture2D" uid="uid://cj7xpdqms823x" path="res://map/The_Entire_GTAG_Map_structureroof.png" id="1_mk15d"]
+
+[resource]
+resource_name = "structureroof"
+cull_mode = 2
+albedo_texture = ExtResource("1_mk15d")
+texture_filter = 2

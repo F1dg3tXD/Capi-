@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="VrTest"
-run/main_scene="res://main.tscn"
+config/name="Capi"
+run/main_scene="uid://dlmfp2l58fl7r"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/image="uid://co4wufvyiq8fq"
+config/icon="uid://co4wufvyiq8fq"
 
 [autoload]
 
@@ -27,6 +28,17 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[global_group]
+
+Player="Main Player Group"
+
+[input]
+
+ax_button={
+"deadzone": 0.2,
+"events": []
+}
+
 [physics]
 
 common/physics_ticks_per_second=90
@@ -35,6 +47,7 @@ common/physics_ticks_per_second=90
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 
 [xr]
 

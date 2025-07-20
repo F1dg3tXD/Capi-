@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://gu6nfwwxy8uo"]
+
+[resource]
+resource_name = "window.001"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+blend_mode = 3

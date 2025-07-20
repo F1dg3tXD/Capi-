@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgk53tv2qoqje"]
+
+[resource]
+resource_name = "screen.001"
+cull_mode = 2
+albedo_color = Color(0.0688253, 0.367734, 0.0390988, 1)
+roughness = 0.552786

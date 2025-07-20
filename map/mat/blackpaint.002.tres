@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cyhrlhc78k4ci"]
+
+[resource]
+resource_name = "blackpaint.002"
+albedo_color = Color(0.815981, 0.815981, 0.815981, 1)
+roughness = 0.552786

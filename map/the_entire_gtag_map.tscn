@@ -1,0 +1,70 @@
+[gd_scene load_steps=22 format=3 uid="uid://cpwjku63oopu6"]
+
+[ext_resource type="PackedScene" uid="uid://bs4qh7w8odr4i" path="res://map/The_Entire_GTAG_Map.glb" id="1_f01xf"]
+[ext_resource type="Script" uid="uid://y6pfls3lgkm0" path="res://scripts/crystal_room.gd" id="2_llgol"]
+[ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_uq8ca"]
+[ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="3_3c115"]
+[ext_resource type="Material" uid="uid://cqqls7n2ldg53" path="res://map/mat/neonblue.001.tres" id="3_n6gm5"]
+[ext_resource type="Material" uid="uid://cs8qpn8s73nmi" path="res://map/mat/neonblue.002.tres" id="4_svf5h"]
+[ext_resource type="Material" uid="uid://dubpx4jr17osb" path="res://map/mat/neonblue.tres" id="5_wpktm"]
+[ext_resource type="Material" uid="uid://blsxs3wq5e7uu" path="res://map/mat/neongreen.001.tres" id="6_jrwb5"]
+[ext_resource type="Material" uid="uid://dok1lkcw5ujcl" path="res://map/mat/neongreen.tres" id="7_u4elf"]
+[ext_resource type="Material" uid="uid://c0yu8w4j57dt" path="res://map/mat/neonpurple.001.tres" id="8_0f5ej"]
+[ext_resource type="Material" uid="uid://hq6lvf8vhdak" path="res://map/mat/neonpurple.tres" id="9_1dmmv"]
+[ext_resource type="Material" uid="uid://djuvdsxdhhsqs" path="res://map/mat/neonpurpledim.001.tres" id="10_gysph"]
+[ext_resource type="Material" uid="uid://dwk8oi66qs44e" path="res://map/mat/neonpurpledim.tres" id="11_8f7ae"]
+[ext_resource type="Material" uid="uid://85ohpqhc28sa" path="res://map/mat/neonred.tres" id="12_na2jk"]
+[ext_resource type="Material" uid="uid://bkr1ombw143l" path="res://map/mat/neonwhite.tres" id="13_x70k8"]
+[ext_resource type="Material" uid="uid://bffw8bus1nyr6" path="res://map/mat/neonyellow.001.tres" id="14_6oj5v"]
+[ext_resource type="Material" uid="uid://bo6kihrrkt1ni" path="res://map/mat/neonyellow.tres" id="15_6yci8"]
+[ext_resource type="AudioStream" uid="uid://bxw2th8hylj60" path="res://music/The K9 Background Music.mp3" id="18_svf5h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uq8ca"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sun_angle_max = 189.55
+
+[sub_resource type="Sky" id="Sky_3c115"]
+sky_material = SubResource("ProceduralSkyMaterial_uq8ca")
+
+[sub_resource type="Environment" id="Environment_llgol"]
+background_mode = 2
+sky = SubResource("Sky_3c115")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.556863, 1, 0.956863, 1)
+fog_density = 0.2
+fog_depth_begin = 50.0
+volumetric_fog_density = 0.1605
+volumetric_fog_albedo = Color(0.737255, 1, 1, 1)
+
+[node name="The_Entire_GTAG_Map" instance=ExtResource("1_f01xf")]
+
+[node name="crystal_room" parent="Cave_Forest___Canyon/cave" index="4" node_paths=PackedStringArray("meshes")]
+script = ExtResource("2_llgol")
+meshes = [NodePath("crystal"), NodePath("crystal__10__1"), NodePath("crystal__11__1"), NodePath("crystal__12__1"), NodePath("crystal__13__2"), NodePath("crystal__14__2"), NodePath("crystal__15__2"), NodePath("crystal__16__1"), NodePath("crystal__17__1"), NodePath("crystal__18__3"), NodePath("crystal__19__2"), NodePath("crystal__4__2"), NodePath("crystal__5__1"), NodePath("crystal__6__2"), NodePath("crystal__7__2"), NodePath("crystal__8_"), NodePath("crystal__9__2"), NodePath("entrance_bouquet/crystal__13_"), NodePath("entrance_bouquet/crystal__14_"), NodePath("entrance_bouquet/crystal__15_"), NodePath("entrance_bouquet/crystal__16_"), NodePath("entrance_bouquet/crystal__17_"), NodePath("entrance_bouquet_2/crystal__18_"), NodePath("entrance_bouquet_2/crystal__19_"), NodePath("entrance_bouquet_2/crystal__20_"), NodePath("entrance_bouquet_2/crystal__21_"), NodePath("entrance_bouquet_2/crystal__22_"), NodePath("entrance_bouquet_2__1_/crystal__18__1"), NodePath("entrance_bouquet_2__1_/crystal__19__1"), NodePath("entrance_bouquet_2__1_/crystal__20__1"), NodePath("entrance_bouquet_2__1_/crystal__21__1"), NodePath("entrance_bouquet_2__1_/crystal__22__1"), NodePath("keyboard_001/crystal__18__2"), NodePath("keyboard_001/crystal__20__2"), NodePath("keyboard_001/crystal__21__2"), NodePath("keyboard_001/crystal__22__2"), NodePath("keyboard_001/crystal__23_"), NodePath("keyboard_001/crystal__24_"), NodePath("keyboard_001/crystal__25_"), NodePath("keyboard_001/crystal__26_"), NodePath("keyboard_001/crystal__27_"), NodePath("keyboard_001/crystal__28_"), NodePath("keyboard_001/crystal__29_"), NodePath("keyboard_001/crystal__30_"), NodePath("keyboard_001/crystal__31_"), NodePath("keyboard_001/crystal__32_"), NodePath("keyboard_001/crystal__33_"), NodePath("keyboard_001/crystal__34_"), NodePath("keyboard_001/crystal__35_"), NodePath("keyboard_001/crystal__36_"), NodePath("keyboard_001/crystal__37_"), NodePath("keyboard_001/crystal__38_"), NodePath("keyboard_001/crystal__39_"), NodePath("keyboard_001/crystal__40_"), NodePath("keyboard_001/crystal__41_"), NodePath("keyboard_001/crystal__42_"), NodePath("keyboard_001/crystal__43_"), NodePath("keyboard_001/crystal__44_"), NodePath("keyboard_001/crystal__45_"), NodePath("keyboard_001/crystal__46_"), NodePath("keyboard_001/crystal__47_"), NodePath("large_ceiling_bouquet/crystal__2_"), NodePath("large_ceiling_bouquet/crystal__6_"), NodePath("large_ceiling_bouquet/crystal__7_"), NodePath("large_ceiling_bouquet/crystal__9_"), NodePath("large_ceiling_bouquet__1_/crystal__2__1"), NodePath("large_ceiling_bouquet__1_/crystal__6__1"), NodePath("large_ceiling_bouquet__1_/crystal__7__1"), NodePath("large_ceiling_bouquet__1_/crystal__9__1"), NodePath("large_floor_bouquet/crystal__1_"), NodePath("large_floor_bouquet/crystal__3_"), NodePath("large_floor_bouquet/crystal__4_"), NodePath("large_floor_bouquet__1_/crystal__1__1"), NodePath("large_floor_bouquet__1_/crystal__3__1"), NodePath("large_floor_bouquet__1_/crystal__4__1"), NodePath("large_floor_bouquet__1_/crystal__5_"), NodePath("left_ceiling_bouquet/crystal__10_"), NodePath("left_ceiling_bouquet/crystal__11_"), NodePath("left_ceiling_bouquet/crystal__12_"), NodePath("left_ceiling_bouquet/crystal__13__1"), NodePath("left_ceiling_bouquet/crystal__14__1"), NodePath("left_ceiling_bouquet/crystal__15__1"), NodePath("../Mines/entrance_bouquet__1_/crystal__13__3"), NodePath("../Mines/entrance_bouquet__1_/crystal__14__3"), NodePath("../Mines/entrance_bouquet__1_/crystal__15__3"), NodePath("../Mines/entrance_bouquet__1_/crystal__16__2"), NodePath("../Mines/entrance_bouquet__1_/crystal__17__2"), NodePath("../Mines/entrance_bouquet__2_/crystal__13__4"), NodePath("../Mines/entrance_bouquet__2_/crystal__14__4"), NodePath("../Mines/entrance_bouquet__2_/crystal__15__4"), NodePath("../Mines/entrance_bouquet__2_/crystal__16__3"), NodePath("../Mines/entrance_bouquet__2_/crystal__17__3"), NodePath("../Mines/entrance_bouquet__3_/crystal__13__5"), NodePath("../Mines/entrance_bouquet__3_/crystal__14__5"), NodePath("../Mines/entrance_bouquet__3_/crystal__15__5"), NodePath("../Mines/entrance_bouquet__3_/crystal__16__4"), NodePath("../Mines/entrance_bouquet__3_/crystal__17__4"), NodePath("../Mines/entrance_bouquet__4_/crystal__13__6"), NodePath("../Mines/entrance_bouquet__4_/crystal__14__6"), NodePath("../Mines/entrance_bouquet__4_/crystal__15__6"), NodePath("../Mines/entrance_bouquet__4_/crystal__16__5"), NodePath("../Mines/entrance_bouquet__4_/crystal__17__5")]
+materials = Array[Material]([ExtResource("3_n6gm5"), ExtResource("4_svf5h"), ExtResource("5_wpktm"), ExtResource("6_jrwb5"), ExtResource("7_u4elf"), ExtResource("8_0f5ej"), ExtResource("9_1dmmv"), ExtResource("10_gysph"), ExtResource("11_8f7ae"), ExtResource("12_na2jk"), ExtResource("13_x70k8"), ExtResource("14_6oj5v"), ExtResource("15_6yci8")])
+run_randomize = true
+
+[node name="player" parent="." index="11" instance=ExtResource("2_uq8ca")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 144.036, 29.484, -97.1444)
+script = ExtResource("3_3c115")
+
+[node name="env" type="Node3D" parent="." index="12"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env" index="0"]
+environment = SubResource("Environment_llgol")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" index="1"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="TheK9BackgroundMusic" type="AudioStreamPlayer" parent="." index="13"]
+stream = ExtResource("18_svf5h")
+volume_db = -25.0
+autoplay = true
+bus = &"Music"
+playback_type = 1
+parameters/looping = true

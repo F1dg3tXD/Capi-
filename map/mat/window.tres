@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ei2objjim5xr"]
+
+[resource]
+resource_name = "window"
+transparency = 1
+blend_mode = 3
+cull_mode = 2

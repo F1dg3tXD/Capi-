@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bk6355x6dffrp"]
+
+[ext_resource type="Texture2D" uid="uid://6cqlojgx1buw" path="res://map/The_Entire_GTAG_Map_ice3.png" id="1_8cryy"]
+
+[resource]
+resource_name = "Blue Ice"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_8cryy")
+texture_filter = 2

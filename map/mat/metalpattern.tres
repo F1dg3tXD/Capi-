@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://jqnra2mgxnrd"]
+
+[ext_resource type="Texture2D" uid="uid://cjtytwyulrkaf" path="res://map/The_Entire_GTAG_Map_metalpattern.png" id="1_j3yqx"]
+
+[resource]
+resource_name = "metalpattern"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_j3yqx")
+roughness = 0.552786

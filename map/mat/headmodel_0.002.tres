@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5cl5ejnqbo5"]
+
+[resource]
+resource_name = "headmodel_0.002"
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+roughness = 0.552786

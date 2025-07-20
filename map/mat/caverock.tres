@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dlokejflqfyp3"]
+
+[ext_resource type="Texture2D" uid="uid://b0qqi3x015vr0" path="res://map/The_Entire_GTAG_Map_caverock.png" id="1_n73pr"]
+
+[resource]
+resource_name = "caverock"
+albedo_texture = ExtResource("1_n73pr")
+roughness = 0.552786
+texture_filter = 2

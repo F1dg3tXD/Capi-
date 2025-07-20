@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dw0bf5r51610g"]
+
+[ext_resource type="Texture2D" uid="uid://bcgia3w7yakhh" path="res://map/The_Entire_GTAG_Map_carttexture.png" id="1_y0rdy"]
+
+[resource]
+resource_name = "carttexture.001"
+albedo_texture = ExtResource("1_y0rdy")
+texture_filter = 2

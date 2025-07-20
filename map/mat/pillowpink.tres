@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://hiefqy4oeagq"]
+
+[ext_resource type="Texture2D" uid="uid://be8upw73qxwlg" path="res://map/The_Entire_GTAG_Map_pillowpink.png" id="1_xmb1y"]
+
+[resource]
+resource_name = "pillowpink"
+cull_mode = 2
+albedo_texture = ExtResource("1_xmb1y")
+texture_filter = 2

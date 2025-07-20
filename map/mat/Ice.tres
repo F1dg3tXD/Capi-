@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://qcxpawgqe6j4"]
+
+[ext_resource type="Texture2D" uid="uid://ckjvqbf3wmt0x" path="res://map/The_Entire_GTAG_Map_iceground.png" id="1_qcr7i"]
+
+[resource]
+resource_name = "Ice"
+albedo_texture = ExtResource("1_qcr7i")
+texture_filter = 2

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bghyas1gkjdwu"]
+
+[ext_resource type="Texture2D" uid="uid://ce7y23o7p72uu" path="res://map/The_Entire_GTAG_Map_pillowyellow.png" id="1_6j25r"]
+
+[resource]
+resource_name = "pillowyellow"
+cull_mode = 2
+albedo_texture = ExtResource("1_6j25r")
+roughness = 0.552786
+texture_filter = 2

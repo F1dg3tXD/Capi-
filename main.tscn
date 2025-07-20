@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dlmfp2l58fl7r"]
+[gd_scene load_steps=21 format=3 uid="uid://dlmfp2l58fl7r"]
 
 [ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="1_gakxv"]
 [ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://1jgdy1tqdrkb" path="res://models/map_txt.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://djcxbb38qa54d" path="res://prefabs/gui.tscn" id="4_1bvp3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w3gnw"]
 
@@ -205,3 +207,14 @@ environment = SubResource("Environment_67l88")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.930577, 0.291382, 0.221636, 0, -0.605405, 0.795918, 0.366095, -0.740663, -0.563376, 0, 2.90989, 0)
 shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.800232, 0, -9.61238)
+use_collision = true
+size = Vector3(2.60046, 1, 1)
+
+[node name="map_txt" parent="CSGBox3D" instance=ExtResource("3_h2yge")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0.284109, 0.500046)
+
+[node name="GUI" parent="." instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949158, 1, -9.74721)

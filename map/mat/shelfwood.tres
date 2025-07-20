@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bjcm8d478kfaw"]
+
+[ext_resource type="Texture2D" uid="uid://bgehgg2an6rvp" path="res://map/The_Entire_GTAG_Map_woodshelf.png" id="1_afqq4"]
+
+[resource]
+resource_name = "shelfwood"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_afqq4")
+roughness = 0.552786
