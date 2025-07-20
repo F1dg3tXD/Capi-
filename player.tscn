@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqswlbg8wquus"]
+
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="1_hqtel"]
+[ext_resource type="PackedScene" uid="uid://dgncgj4b56r52" path="res://xr_tools_hand_pusher.tscn" id="2_sweqy"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="3_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://ctwfhsr53boeg" path="res://movement_hand_walk.tscn" id="4_1jxqw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qu5kw"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="player" type="XROrigin3D"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="LeftHandController" type="XRController3D" parent="."]
+tracker = &"left_hand"
+pose = &"grip"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftHandController"]
+visible = false
+mesh = SubResource("BoxMesh_qu5kw")
+
+[node name="MovementTurn" parent="LeftHandController" instance=ExtResource("1_hqtel")]
+
+[node name="XRToolsHandPusher" parent="LeftHandController" instance=ExtResource("2_sweqy")]
+
+[node name="RightHandController" type="XRController3D" parent="."]
+tracker = &"right_hand"
+pose = &"grip"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightHandController"]
+visible = false
+mesh = SubResource("BoxMesh_qu5kw")
+
+[node name="MovementTurn" parent="RightHandController" instance=ExtResource("1_hqtel")]
+
+[node name="XRToolsHandPusher" parent="RightHandController" instance=ExtResource("2_sweqy")]
+
+[node name="PlayerBody" parent="." instance=ExtResource("3_2hs0m")]
+player_radius = 0.1
+
+[node name="XRToolsMovementHandWalk" parent="." instance=ExtResource("4_1jxqw")]
+fling_multiplier = 0.5
+grav = 5.0
+velocity_averages = 8
