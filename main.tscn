@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dlmfp2l58fl7r"]
+[gd_scene load_steps=22 format=3 uid="uid://dlmfp2l58fl7r"]
 
 [ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="1_gakxv"]
 [ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://1jgdy1tqdrkb" path="res://models/map_txt.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://djcxbb38qa54d" path="res://prefabs/gui.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://coenfl7ahpnfm" path="res://scripts/vrbutton.gd" id="5_lquwl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w3gnw"]
 
@@ -227,5 +228,25 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 
 
 [node name="GUI" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949158, 1, -9.74721)
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("5_lquwl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node"]
+
+[node name="Control" type="Control" parent="Node/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Node/CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 592.0
+offset_right = 717.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 32
+text = "Enter VR"
 
 [editable path="player"]
