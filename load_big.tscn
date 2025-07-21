@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://7qt2ulumbvah" path="res://addons/godot-xr-tools/staging/staging.gd" id="1_tariy"]
 [ext_resource type="Shader" uid="uid://dugqy824t0pkd" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="2_5do6u"]
-[ext_resource type="PackedScene" uid="uid://dwwdv6qwlxkbx" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="3_e8sq3"]
 [ext_resource type="PackedScene" uid="uid://bqumugyvkct4r" path="res://addons/godot-xr-tools/staging/loading_screen.tscn" id="4_p6f8c"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="5_jfnwo"]
+[ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="5_qdcnn"]
 
 [sub_resource type="QuadMesh" id="4"]
 custom_aabb = AABB(-5000, -5000, -5000, 10000, 10000, 10000)
@@ -32,20 +32,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_snlak")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("2")
 
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
-
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-
-[node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" instance=ExtResource("3_e8sq3")]
-
-[node name="LeftHandController" type="XRController3D" parent="XROrigin3D"]
-tracker = &"left_hand"
-pose = &"aim"
-
-[node name="RightHandController" type="XRController3D" parent="XROrigin3D"]
-tracker = &"right_hand"
-pose = &"aim"
-
 [node name="LoadingScreen" parent="." instance=ExtResource("4_p6f8c")]
 progress = 0.0
 
@@ -53,6 +39,8 @@ progress = 0.0
 
 [node name="StartXR" parent="." instance=ExtResource("5_jfnwo")]
 physics_rate_multiplier = 1
+
+[node name="player" parent="." instance=ExtResource("5_qdcnn")]
 
 [connection signal="xr_ended" from="StartXR" to="." method="_on_StartXR_xr_ended"]
 [connection signal="xr_started" from="StartXR" to="." method="_on_StartXR_xr_started"]

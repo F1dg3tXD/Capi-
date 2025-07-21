@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cpwjku63oopu6"]
+[gd_scene load_steps=23 format=3 uid="uid://cpwjku63oopu6"]
 
 [ext_resource type="PackedScene" uid="uid://bs4qh7w8odr4i" path="res://map/The_Entire_GTAG_Map.glb" id="1_f01xf"]
 [ext_resource type="Script" uid="uid://y6pfls3lgkm0" path="res://scripts/crystal_room.gd" id="2_llgol"]
@@ -18,6 +18,7 @@
 [ext_resource type="Material" uid="uid://bffw8bus1nyr6" path="res://map/mat/neonyellow.001.tres" id="14_6oj5v"]
 [ext_resource type="Material" uid="uid://bo6kihrrkt1ni" path="res://map/mat/neonyellow.tres" id="15_6yci8"]
 [ext_resource type="AudioStream" uid="uid://bxw2th8hylj60" path="res://music/The K9 Background Music.mp3" id="18_svf5h"]
+[ext_resource type="ArrayOccluder3D" uid="uid://4ntn8cr8i55x" path="res://map/the_entire_gtag_map.occ" id="19_wpktm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uq8ca"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -67,3 +68,6 @@ autoplay = true
 bus = &"Music"
 playback_type = 1
 parameters/looping = true
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="14"]
+occluder = ExtResource("19_wpktm")

@@ -64,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
 [node name="XRMapLoader" parent="player/RightHandController" index="3"]
-map_to_load = "uid://cpwjku63oopu6"
+map_to_load = "uid://b1p0uwk5705et"
 
 [node name="Env" type="Node3D" parent="."]
 
