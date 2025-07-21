@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlmfp2l58fl7r"]
+[gd_scene load_steps=21 format=3 uid="uid://dlmfp2l58fl7r"]
 
 [ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="1_gakxv"]
 [ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://1jgdy1tqdrkb" path="res://models/map_txt.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://djcxbb38qa54d" path="res://prefabs/gui.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="5_lquwl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w3gnw"]
 
@@ -56,13 +55,13 @@ sky = SubResource("Sky_01wgo")
 script = ExtResource("1_gakxv")
 
 [node name="player" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 0, -1.32179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
 [node name="XRToolsHandPusher" parent="player/LeftHandController" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 0, -1.32179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
 [node name="XRToolsHandPusher" parent="player/RightHandController" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 0, -1.32179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
 [node name="XRMapLoader" parent="player/RightHandController" index="3"]
 map_to_load = "uid://cpwjku63oopu6"
@@ -228,8 +227,5 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 
 
 [node name="GUI" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949158, 1, -9.74721)
-
-[node name="StartXR" parent="." instance=ExtResource("5_lquwl")]
-physics_rate_multiplier = 1
 
 [editable path="player"]

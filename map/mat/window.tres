@@ -3,5 +3,8 @@
 [resource]
 resource_name = "window"
 transparency = 1
-blend_mode = 3
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.658824, 1, 1, 0.054902)
+disable_receive_shadows = true

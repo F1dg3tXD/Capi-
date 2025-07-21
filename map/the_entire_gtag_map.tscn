@@ -48,8 +48,7 @@ meshes = [NodePath("crystal"), NodePath("crystal__10__1"), NodePath("crystal__11
 materials = Array[Material]([ExtResource("3_n6gm5"), ExtResource("4_svf5h"), ExtResource("5_wpktm"), ExtResource("6_jrwb5"), ExtResource("7_u4elf"), ExtResource("8_0f5ej"), ExtResource("9_1dmmv"), ExtResource("10_gysph"), ExtResource("11_8f7ae"), ExtResource("12_na2jk"), ExtResource("13_x70k8"), ExtResource("14_6oj5v"), ExtResource("15_6yci8")])
 
 [node name="player" parent="." index="11" instance=ExtResource("2_uq8ca")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 144.036, 29.484, -97.1444)
-world_scale = 1.4
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 144.036, 30.8837, -97.8791)
 script = ExtResource("3_3c115")
 
 [node name="env" type="Node3D" parent="." index="12"]

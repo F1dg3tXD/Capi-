@@ -28,7 +28,6 @@ bounce_threshold = 1.0
 metadata/_custom_type_script = "uid://dvv0d3yhhk0lq"
 
 [node name="player" type="XROrigin3D" groups=["Player"]]
-world_scale = 1.4
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

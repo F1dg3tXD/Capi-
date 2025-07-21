@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Capi"
-run/main_scene="uid://dlmfp2l58fl7r"
+run/main_scene="uid://dabo21l2cst13"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/image="uid://co4wufvyiq8fq"
-config/icon="uid://co4wufvyiq8fq"
+config/icon="uid://ca3stjn2puhhw"
 
 [autoload]
 
@@ -49,7 +49,8 @@ common/physics_ticks_per_second=90
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 
 [xr]
