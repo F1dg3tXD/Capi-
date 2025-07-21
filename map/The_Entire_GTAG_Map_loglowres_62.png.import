@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lvgre5klw81g"
 path.s3tc="res://.godot/imported/The_Entire_GTAG_Map_loglowres_62.png-1e8a3a14963b988e8c881031de7db84e.s3tc.ctex"
+path.etc2="res://.godot/imported/The_Entire_GTAG_Map_loglowres_62.png-1e8a3a14963b988e8c881031de7db84e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://map/The_Entire_GTAG_Map_loglowres_62.png"
-dest_files=["res://.godot/imported/The_Entire_GTAG_Map_loglowres_62.png-1e8a3a14963b988e8c881031de7db84e.s3tc.ctex"]
+dest_files=["res://.godot/imported/The_Entire_GTAG_Map_loglowres_62.png-1e8a3a14963b988e8c881031de7db84e.s3tc.ctex", "res://.godot/imported/The_Entire_GTAG_Map_loglowres_62.png-1e8a3a14963b988e8c881031de7db84e.etc2.ctex"]
 
 [params]
 

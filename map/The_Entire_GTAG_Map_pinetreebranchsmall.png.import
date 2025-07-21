@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqje0l1mb0jm2"
 path.s3tc="res://.godot/imported/The_Entire_GTAG_Map_pinetreebranchsmall.png-a6f74f5ba836b95d365d1cb0fe1578f1.s3tc.ctex"
+path.etc2="res://.godot/imported/The_Entire_GTAG_Map_pinetreebranchsmall.png-a6f74f5ba836b95d365d1cb0fe1578f1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://map/The_Entire_GTAG_Map_pinetreebranchsmall.png"
-dest_files=["res://.godot/imported/The_Entire_GTAG_Map_pinetreebranchsmall.png-a6f74f5ba836b95d365d1cb0fe1578f1.s3tc.ctex"]
+dest_files=["res://.godot/imported/The_Entire_GTAG_Map_pinetreebranchsmall.png-a6f74f5ba836b95d365d1cb0fe1578f1.s3tc.ctex", "res://.godot/imported/The_Entire_GTAG_Map_pinetreebranchsmall.png-a6f74f5ba836b95d365d1cb0fe1578f1.etc2.ctex"]
 
 [params]
 
