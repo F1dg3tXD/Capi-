@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/image="uid://co4wufvyiq8fq"
 config/icon="uid://ca3stjn2puhhw"
 
+[audio]
+
+driver/enable_input=true
+
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"

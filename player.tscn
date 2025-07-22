@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqswlbg8wquus"]
+[gd_scene load_steps=17 format=3 uid="uid://bqswlbg8wquus"]
 
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="1_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bl8bmgvh0u1xg" path="res://models/player_head.tscn" id="1_urp6f"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://1ow23awdwfog" path="res://prefabs/button_stand.tscn" id="7_n7ghd"]
 [ext_resource type="Script" uid="uid://dvv0d3yhhk0lq" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="8_b26j0"]
 [ext_resource type="PackedScene" uid="uid://c08tmqkix4v2o" path="res://addons/godot-xr-tools/hands/scenes/robo/right_hand_robo.tscn" id="9_ivps1"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_urp6f"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_b26j0"]
 radius = 0.05
@@ -40,6 +42,12 @@ near = 0.1
 
 [node name="playerHead" parent="XRCamera3D" instance=ExtResource("1_urp6f")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="VoiceOutput" type="AudioStreamPlayer3D" parent="XRCamera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0129349, 0)
+stream = SubResource("AudioStreamMicrophone_urp6f")
+autoplay = true
+bus = &"VOIP"
 
 [node name="LeftHandController" type="XRController3D" parent="."]
 tracker = &"left_hand"
@@ -69,6 +77,7 @@ metadata/_custom_type_script = "uid://b07jouvba3mmc"
 
 [node name="LeftHand" parent="LeftHandController" instance=ExtResource("5_nvl01")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+primary_touch_action = "primary_touch"
 
 [node name="RightHandController" type="XRController3D" parent="."]
 tracker = &"right_hand"
@@ -93,6 +102,7 @@ metadata/_custom_type_script = "uid://bnwr2qks6focx"
 
 [node name="RightHand" parent="RightHandController" instance=ExtResource("9_ivps1")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+primary_touch_action = "primary_touch"
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_2hs0m")]
 player_radius = 0.1

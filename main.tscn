@@ -72,11 +72,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 [node name="XRToolsHandPusher" parent="player/LeftHandController" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
+[node name="LeftHand" parent="player/LeftHandController" index="4"]
+primary_touch_action = null
+
 [node name="XRToolsHandPusher" parent="player/RightHandController" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
 [node name="XRMapLoader" parent="player/RightHandController" index="3"]
 map_to_load = "uid://b1p0uwk5705et"
+
+[node name="RightHand" parent="player/RightHandController" index="4"]
+primary_touch_action = null
 
 [node name="Env" type="Node3D" parent="."]
 
