@@ -33,6 +33,9 @@ signal hand_scale_changed(scale)
 ## Name of the Trigger action in the OpenXR Action Map.
 @export var trigger_action : String = "trigger"
 
+@export var primary_touch_action: String = "primary_touch"
+
+
 
 ## Last world scale (for scaling hands)
 var _last_world_scale : float = 1.0
@@ -120,13 +123,15 @@ func _process(_delta: float) -> void:
 	if controller:
 		var grip : float = controller.get_float(grip_action)
 		var trigger : float = controller.get_float(trigger_action)
-
-		# Allow overriding of grip and trigger
-		if _force_grip >= 0.0: grip = _force_grip
-		if _force_trigger >= 0.0: trigger = _force_trigger
-
-		$AnimationTree.set("parameters/Grip/blend_amount", grip)
-		$AnimationTree.set("parameters/Trigger/blend_amount", trigger)
+		var primary_touch : float = controller.get_float(primary_touch_action)
+		
+		# New logic for ThumbUp animation
+		if primary_touch:
+			$AnimationTree.set("parameters/ThumbUp/blend_amount", 0.0)
+		elif grip >= 0.0:
+			$AnimationTree.set("parameters/ThumbUp/blend_amount", grip)
+		else:
+			$AnimationTree.set("parameters/ThumbUp/blend_amount", 0.0)
 
 
 
