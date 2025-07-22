@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dln5warmdwubl"]
+[gd_scene load_steps=19 format=3 uid="uid://dln5warmdwubl"]
 
 [ext_resource type="Script" uid="uid://cq7dqyn4ul8sy" path="res://addons/godot-xr-tools/hands/hand.gd" id="1_ydo76"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://dl8yf7ipqotd1" path="res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres" id="2_1dtr3"]
@@ -24,12 +24,19 @@ filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_In
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j17e7"]
 animation = &"Grip 5"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pawi8"]
+animation = &"Thumb"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_cppq8"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L"]
+
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_35vp8"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_xiq3w"]
-graph_offset = Vector2(-536, 11)
+graph_offset = Vector2(-415.442, -55.4701)
 nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_c0d2x")
 nodes/ClosedHand1/position = Vector2(-600, 300)
 nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_fgr3a")
@@ -38,9 +45,14 @@ nodes/Grip/node = SubResource("AnimationNodeBlend2_bybbe")
 nodes/Grip/position = Vector2(0, 20)
 nodes/OpenHand/node = SubResource("AnimationNodeAnimation_j17e7")
 nodes/OpenHand/position = Vector2(-600, 100)
+nodes/Thumb/node = SubResource("AnimationNodeAnimation_pawi8")
+nodes/Thumb/position = Vector2(0, 300)
+nodes/ThumbUp/node = SubResource("AnimationNodeBlend2_cppq8")
+nodes/ThumbUp/position = Vector2(280, 80)
 nodes/Trigger/node = SubResource("AnimationNodeBlend2_35vp8")
 nodes/Trigger/position = Vector2(-360, 20)
-node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
+nodes/output/position = Vector2(540, 140)
+node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"ThumbUp", 0, &"Grip", &"ThumbUp", 1, &"Thumb", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"ThumbUp"]
 
 [node name="LeftHand" type="Node3D"]
 script = ExtResource("1_ydo76")
@@ -85,6 +97,7 @@ root_node = NodePath("../Hand_Robo_L")
 tree_root = SubResource("AnimationNodeBlendTree_xiq3w")
 anim_player = NodePath("../Hand_Robo_L/AnimationPlayer")
 parameters/Grip/blend_amount = 0.0
+parameters/ThumbUp/blend_amount = 0
 parameters/Trigger/blend_amount = 0.0
 
 [editable path="Hand_Robo_L"]

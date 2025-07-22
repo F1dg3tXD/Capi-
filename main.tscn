@@ -56,12 +56,12 @@ sky = SubResource("Sky_01wgo")
 
 [sub_resource type="QuadMesh" id="QuadMesh_3fs6y"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lquwl"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1bvp3"]
 viewport_path = NodePath("Mirror/Node3D/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_lquwl")
+albedo_texture = SubResource("ViewportTexture_1bvp3")
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_gakxv")
@@ -72,17 +72,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 [node name="XRToolsHandPusher" parent="player/LeftHandController" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
-[node name="LeftHand" parent="player/LeftHandController" index="4"]
-primary_touch_action = null
-
 [node name="XRToolsHandPusher" parent="player/RightHandController" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
 [node name="XRMapLoader" parent="player/RightHandController" index="3"]
-map_to_load = "uid://b1p0uwk5705et"
-
-[node name="RightHand" parent="player/RightHandController" index="4"]
-primary_touch_action = null
+visible = false
 
 [node name="Env" type="Node3D" parent="."]
 
@@ -258,12 +252,11 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
 
 [node name="SubViewport" type="SubViewport" parent="Mirror/Node3D"]
-use_xr = true
 handle_input_locally = false
 vrs_mode = 3
 vrs_update_mode = 2
 gui_disable_input = true
-size = Vector2i(0, 0)
+size = Vector2i(3840, 2160)
 
 [node name="Camera3D" type="Camera3D" parent="Mirror/Node3D/SubViewport"]
 transform = Transform3D(-1, -1.50996e-07, -1.50996e-07, -1.50996e-07, 1, -1.32005e-14, -1.50996e-07, -9.59926e-15, 1, 6.03189, 1.19704, 9.33106)
