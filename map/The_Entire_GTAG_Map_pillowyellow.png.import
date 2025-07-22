@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce7y23o7p72uu"
 path.s3tc="res://.godot/imported/The_Entire_GTAG_Map_pillowyellow.png-fd8f83987d139eee03517c23d318747f.s3tc.ctex"
+path.etc2="res://.godot/imported/The_Entire_GTAG_Map_pillowyellow.png-fd8f83987d139eee03517c23d318747f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://map/The_Entire_GTAG_Map_pillowyellow.png"
-dest_files=["res://.godot/imported/The_Entire_GTAG_Map_pillowyellow.png-fd8f83987d139eee03517c23d318747f.s3tc.ctex"]
+dest_files=["res://.godot/imported/The_Entire_GTAG_Map_pillowyellow.png-fd8f83987d139eee03517c23d318747f.s3tc.ctex", "res://.godot/imported/The_Entire_GTAG_Map_pillowyellow.png-fd8f83987d139eee03517c23d318747f.etc2.ctex"]
 
 [params]
 

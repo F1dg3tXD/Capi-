@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1p0uwk5705et"]
+
+[ext_resource type="Script" uid="uid://7qt2ulumbvah" path="res://addons/godot-xr-tools/staging/staging.gd" id="1_tariy"]
+[ext_resource type="Shader" uid="uid://dugqy824t0pkd" path="res://addons/godot-xr-tools/staging/fade.gdshader" id="2_5do6u"]
+[ext_resource type="PackedScene" uid="uid://bqumugyvkct4r" path="res://addons/godot-xr-tools/staging/loading_screen.tscn" id="4_p6f8c"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="5_jfnwo"]
+[ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="5_qdcnn"]
+
+[sub_resource type="QuadMesh" id="4"]
+custom_aabb = AABB(-5000, -5000, -5000, 10000, 10000, 10000)
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_snlak"]
+render_priority = 0
+shader = ExtResource("2_5do6u")
+shader_parameter/alpha = 0.0
+
+[sub_resource type="Sky" id="1"]
+
+[sub_resource type="Environment" id="2"]
+background_mode = 1
+sky = SubResource("1")
+
+[node name="Staging" type="Node3D"]
+script = ExtResource("1_tariy")
+main_scene = "uid://cpwjku63oopu6"
+
+[node name="Fade" type="MeshInstance3D" parent="."]
+mesh = SubResource("4")
+surface_material_override/0 = SubResource("ShaderMaterial_snlak")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("2")
+
+[node name="LoadingScreen" parent="." instance=ExtResource("4_p6f8c")]
+progress = 0.0
+
+[node name="Scene" type="Node3D" parent="."]
+
+[node name="StartXR" parent="." instance=ExtResource("5_jfnwo")]
+physics_rate_multiplier = 1
+
+[node name="player" parent="." instance=ExtResource("5_qdcnn")]
+
+[connection signal="xr_ended" from="StartXR" to="." method="_on_StartXR_xr_ended"]
+[connection signal="xr_started" from="StartXR" to="." method="_on_StartXR_xr_started"]

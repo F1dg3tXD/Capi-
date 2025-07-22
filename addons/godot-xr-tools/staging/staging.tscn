@@ -23,7 +23,7 @@ sky = SubResource("1")
 
 [node name="Staging" type="Node3D"]
 script = ExtResource("1")
-main_scene = ""
+main_scene = "uid://dlmfp2l58fl7r"
 
 [node name="Fade" type="MeshInstance3D" parent="."]
 mesh = SubResource("4")

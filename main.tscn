@@ -55,7 +55,16 @@ sky = SubResource("Sky_01wgo")
 script = ExtResource("1_gakxv")
 
 [node name="player" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 0, -1.32179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
+
+[node name="XRToolsHandPusher" parent="player/LeftHandController" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
+
+[node name="XRToolsHandPusher" parent="player/RightHandController" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
+
+[node name="XRMapLoader" parent="player/RightHandController" index="3"]
+map_to_load = "uid://b1p0uwk5705et"
 
 [node name="Env" type="Node3D" parent="."]
 
@@ -218,3 +227,5 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 
 
 [node name="GUI" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949158, 1, -9.74721)
+
+[editable path="player"]

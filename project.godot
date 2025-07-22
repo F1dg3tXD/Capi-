@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Capi"
-run/main_scene="uid://dlmfp2l58fl7r"
+run/main_scene="uid://dabo21l2cst13"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/image="uid://co4wufvyiq8fq"
-config/icon="uid://co4wufvyiq8fq"
+config/icon="uid://ca3stjn2puhhw"
 
 [autoload]
 
@@ -22,6 +22,9 @@ XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
 [editor_plugins]
@@ -46,10 +49,13 @@ common/physics_ticks_per_second=90
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+occlusion_culling/use_occlusion_culling=true
 
 [xr]
 
 openxr/enabled=true
+openxr/reference_space=2
 shaders/enabled=true

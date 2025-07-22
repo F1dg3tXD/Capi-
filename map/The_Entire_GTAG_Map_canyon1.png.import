@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://yeohn4n3j4vl"
 path.s3tc="res://.godot/imported/The_Entire_GTAG_Map_canyon1.png-f3d7cf401d0da02f379b0c7e26c3a170.s3tc.ctex"
+path.etc2="res://.godot/imported/The_Entire_GTAG_Map_canyon1.png-f3d7cf401d0da02f379b0c7e26c3a170.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://map/The_Entire_GTAG_Map_canyon1.png"
-dest_files=["res://.godot/imported/The_Entire_GTAG_Map_canyon1.png-f3d7cf401d0da02f379b0c7e26c3a170.s3tc.ctex"]
+dest_files=["res://.godot/imported/The_Entire_GTAG_Map_canyon1.png-f3d7cf401d0da02f379b0c7e26c3a170.s3tc.ctex", "res://.godot/imported/The_Entire_GTAG_Map_canyon1.png-f3d7cf401d0da02f379b0c7e26c3a170.etc2.ctex"]
 
 [params]
 

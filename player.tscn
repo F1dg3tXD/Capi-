@@ -80,7 +80,6 @@ crouch_type = 1
 metadata/_custom_type_script = "uid://bnwr2qks6focx"
 
 [node name="XRMapLoader" parent="RightHandController" instance=ExtResource("7_n7ghd")]
-map_to_load = "uid://cpwjku63oopu6"
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_2hs0m")]
 player_radius = 0.1
