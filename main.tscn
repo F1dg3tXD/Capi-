@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dlmfp2l58fl7r"]
+[gd_scene load_steps=24 format=3 uid="uid://dlmfp2l58fl7r"]
 
 [ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="1_gakxv"]
 [ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_0xm2m"]
@@ -43,6 +43,9 @@ albedo_color = Color(0.470588, 0.470588, 0.470588, 1)
 albedo_color = Color(0.470588, 0.470588, 0.470588, 1)
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_3av0q"]
+sun_disk_scale = 0.0
+ground_color = Color(0.668118, 0.545388, 0.399403, 1)
+energy_multiplier = 2.95
 
 [sub_resource type="Sky" id="Sky_01wgo"]
 sky_material = SubResource("PhysicalSkyMaterial_3av0q")
@@ -50,6 +53,15 @@ sky_material = SubResource("PhysicalSkyMaterial_3av0q")
 [sub_resource type="Environment" id="Environment_67l88"]
 background_mode = 2
 sky = SubResource("Sky_01wgo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3fs6y"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lquwl"]
+viewport_path = NodePath("Mirror/Node3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lquwl")
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_gakxv")
@@ -214,7 +226,7 @@ shape = SubResource("ConcavePolygonShape3D_fo386")
 environment = SubResource("Environment_67l88")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.930577, 0.291382, 0.221636, 0, -0.605405, 0.795918, 0.366095, -0.740663, -0.563376, 0, 2.90989, 0)
+transform = Transform3D(0.431423, 0.703027, 0.565356, 0.0170597, -0.632921, 0.774028, 0.901989, -0.324289, -0.28505, 0, 2.90989, 0)
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -227,5 +239,28 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 
 
 [node name="GUI" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949158, 1, -9.74721)
+
+[node name="Mirror" type="Node3D" parent="."]
+transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 6.03189, 0.76629, 8.61845)
+
+[node name="Node3D" type="Node3D" parent="Mirror"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mirror/Node3D"]
+transform = Transform3D(1.40266, 0, 1.42109e-14, 0, 0.783286, 0, 0, 0, 1, 0, 0.143583, 0)
+mesh = SubResource("QuadMesh_3fs6y")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="SubViewport" type="SubViewport" parent="Mirror/Node3D"]
+use_xr = true
+handle_input_locally = false
+vrs_mode = 3
+vrs_update_mode = 2
+gui_disable_input = true
+size = Vector2i(0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Mirror/Node3D/SubViewport"]
+transform = Transform3D(-1, -1.50996e-07, -1.50996e-07, -1.50996e-07, 1, -1.32005e-14, -1.50996e-07, -9.59926e-15, 1, 6.03189, 1.19704, 9.33106)
+fov = 90.0
 
 [editable path="player"]

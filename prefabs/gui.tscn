@@ -23,5 +23,6 @@ material_override = SubResource("StandardMaterial3D_brjnw")
 mesh = SubResource("QuadMesh_n4sgc")
 
 [node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
 
 [node name="Control" parent="SubViewport" instance=ExtResource("1_brjnw")]
