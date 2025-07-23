@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqswlbg8wquus"]
+[gd_scene load_steps=18 format=3 uid="uid://bqswlbg8wquus"]
 
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="1_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bl8bmgvh0u1xg" path="res://models/player_head.tscn" id="1_urp6f"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b07jouvba3mmc" path="res://addons/godot-xr-tools/functions/movement_turn.gd" id="4_b26j0"]
 [ext_resource type="Script" uid="uid://bmqg2mi4r0njd" path="res://addons/godot-xr-tools/functions/movement_sprint.gd" id="4_dw050"]
 [ext_resource type="PackedScene" uid="uid://dln5warmdwubl" path="res://addons/godot-xr-tools/hands/scenes/robo/left_hand_robo.tscn" id="5_nvl01"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="7_bwjto"]
 [ext_resource type="PackedScene" uid="uid://1ow23awdwfog" path="res://prefabs/button_stand.tscn" id="7_n7ghd"]
 [ext_resource type="Script" uid="uid://dvv0d3yhhk0lq" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="8_b26j0"]
 [ext_resource type="PackedScene" uid="uid://c08tmqkix4v2o" path="res://addons/godot-xr-tools/hands/scenes/robo/right_hand_robo.tscn" id="9_ivps1"]
@@ -78,6 +79,13 @@ metadata/_custom_type_script = "uid://b07jouvba3mmc"
 [node name="LeftHand" parent="LeftHandController" instance=ExtResource("5_nvl01")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
+[node name="FunctionPointer" parent="LeftHandController" instance=ExtResource("7_bwjto")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+show_laser = 2
+laser_length = 1
+show_target = true
+distance = 5.0
+
 [node name="RightHandController" type="XRController3D" parent="."]
 tracker = &"right_hand"
 pose = &"grip"
@@ -101,6 +109,13 @@ metadata/_custom_type_script = "uid://bnwr2qks6focx"
 
 [node name="RightHand" parent="RightHandController" instance=ExtResource("9_ivps1")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="FunctionPointer" parent="RightHandController" instance=ExtResource("7_bwjto")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+show_laser = 2
+laser_length = 1
+show_target = true
+distance = 5.0
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_2hs0m")]
 player_radius = 0.1
