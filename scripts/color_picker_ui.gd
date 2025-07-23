@@ -7,24 +7,24 @@ extends Control
 
 
 func _ready():
-	color0_picker_button.color_changed.connect(_on_skin_color_changed)
-	color1_picker_button.color_changed.connect(_on_shirt_color_changed)
-	color2_picker_button.color_changed.connect(_on_pants_color_changed)
+	color0_picker_button.color_changed.connect(_on_color0_changed)
+	color1_picker_button.color_changed.connect(_on_color1_changed)
+	color2_picker_button.color_changed.connect(_on_color2_changed)
 
-func _on_skin_color_changed(color: Color):
+func _on_color0_changed(color: Color):
 	_set_material_color(0, color)
 
-func _on_shirt_color_changed(color: Color):
+func _on_color1_changed(color: Color):
 	_set_material_color(1, color)
 
-func _on_pants_color_changed(color: Color):
+func _on_color2_changed(color: Color):
 	_set_material_color(3, color)
 
 func _set_material_color(slot: int, color: Color):
 	if not target_character:
 		return
 
-	var mesh = target_character.get_node("MeshInstance3D")
+	var mesh = target_character.get_node("headGodot")
 	if not mesh:
 		return
 
@@ -35,9 +35,9 @@ func _set_material_color(slot: int, color: Color):
 		if not mat:
 			return
 
-	# Duplicate material if shared
-	if mat.is_shared():
-		mat = mat.duplicate()
-		mesh.set_surface_override_material(slot, mat)
+	# This function doesn't exist.
+	#if mat.is_shared():
+		#mat = mat.duplicate()
+		#mesh.set_surface_override_material(slot, mat)
 
 	mat.albedo_color = color

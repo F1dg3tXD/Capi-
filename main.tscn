@@ -1,16 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://dlmfp2l58fl7r"]
+[gd_scene load_steps=32 format=3 uid="uid://dlmfp2l58fl7r"]
 
 [ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="1_gakxv"]
 [ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://1jgdy1tqdrkb" path="res://models/map_txt.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://djcxbb38qa54d" path="res://prefabs/gui.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://86qt721tg62c" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="6_5vw27"]
 [ext_resource type="Script" uid="uid://cwa2hwmaec075" path="res://scripts/color_picker_ui.gd" id="6_7mycd"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_7mycd"]
-resource_local_to_scene = true
-size = Vector3(0.002, 0.002, 10)
-subdivide_depth = 20
+[ext_resource type="Script" uid="uid://bb5jrharrlihl" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="8_kek77"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w3gnw"]
 
@@ -70,18 +67,22 @@ viewport_path = NodePath("Mirror/Node3D/SubViewport")
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_1bvp3")
 
-[sub_resource type="QuadMesh" id="QuadMesh_nbnhw"]
-size = Vector2(1.778, 1)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_7mycd"]
-viewport_path = NodePath("Customizer/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+[sub_resource type="QuadMesh" id="QuadMesh_5vw27"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_7mycd")
+size = Vector2(1.23, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7mycd"]
-size = Vector3(1.7688, 1, 0.0258179)
+[sub_resource type="ViewportTexture" id="ViewportTexture_5vw27"]
+viewport_path = NodePath("Viewport2Din3D/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_5vw27")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efxa6"]
+resource_local_to_scene = true
+size = Vector3(1.23, 1, 0.02)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_gakxv")
@@ -91,9 +92,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
 
 [node name="XRToolsHandPusher" parent="player/LeftHandController" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
-
-[node name="Laser" parent="player/LeftHandController/FunctionPointer" index="1"]
-mesh = SubResource("BoxMesh_7mycd")
 
 [node name="XRToolsHandPusher" parent="player/RightHandController" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
@@ -288,26 +286,23 @@ fov = 90.0
 [node name="StartXR" parent="." instance=ExtResource("5_lquwl")]
 physics_rate_multiplier = 1
 
-[node name="Customizer" type="Node3D" parent="."]
-transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 3.07461, 0.554449, 8.17604)
+[node name="Viewport2Din3D" type="Node3D" parent="."]
+transform = Transform3D(-0.894467, 0, 0.447135, 0, 1, 0, -0.447135, 0, -0.894467, 3.36698, 0.669196, 8.27808)
+script = ExtResource("6_5vw27")
+screen_size = Vector2(1.23, 1)
+viewport_size = Vector2(1280, 1280)
+transparent = 0
+collision_layer = 5242881
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Customizer"]
-collision_layer = 1048576
-collision_mask = 1048576
+[node name="Viewport" type="SubViewport" parent="Viewport2Din3D"]
+disable_3d = true
+gui_embed_subwindows = true
+size = Vector2i(1280, 1280)
+render_target_update_mode = 1
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Customizer/StaticBody3D"]
-mesh = SubResource("QuadMesh_nbnhw")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_272bh")
+[node name="CanvasLayer" type="CanvasLayer" parent="Viewport2Din3D/Viewport"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Customizer/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00378418, 0, 0.00259447)
-shape = SubResource("BoxShape3D_7mycd")
-
-[node name="SubViewport" type="SubViewport" parent="Customizer"]
-size = Vector2i(1280, 720)
-
-[node name="Control" type="Control" parent="Customizer/SubViewport" node_paths=PackedStringArray("target_character")]
+[node name="Control" type="Control" parent="Viewport2Din3D/Viewport/CanvasLayer" node_paths=PackedStringArray("target_character")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -315,9 +310,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_7mycd")
-target_character = NodePath("../../../player/XRCamera3D/playerHead/headGodot")
+target_character = NodePath("../../../../player/XRCamera3D/playerHead")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Customizer/SubViewport/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Viewport2Din3D/Viewport/CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -328,10 +323,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 390
 
-[node name="Color0" type="Control" parent="Customizer/SubViewport/Control/HBoxContainer"]
+[node name="Color0" type="Control" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Customizer/SubViewport/Control/HBoxContainer/Color0"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer/Color0"]
 layout_mode = 2
 offset_left = 14.0
 offset_top = 95.0
@@ -341,17 +336,17 @@ theme_override_font_sizes/font_size = 66
 text = "0"
 color = Color(1, 0, 0, 1)
 
-[node name="Label" type="Label" parent="Customizer/SubViewport/Control/HBoxContainer/Color0"]
+[node name="Label" type="Label" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer/Color0"]
 layout_mode = 2
 offset_right = 245.0
 offset_bottom = 99.0
 theme_override_font_sizes/font_size = 72
 text = "Color 0"
 
-[node name="Color1" type="Control" parent="Customizer/SubViewport/Control/HBoxContainer"]
+[node name="Color1" type="Control" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Customizer/SubViewport/Control/HBoxContainer/Color1"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer/Color1"]
 layout_mode = 2
 offset_left = 14.0
 offset_top = 95.0
@@ -361,17 +356,17 @@ theme_override_font_sizes/font_size = 66
 text = "0"
 color = Color(1, 1, 1, 1)
 
-[node name="Label" type="Label" parent="Customizer/SubViewport/Control/HBoxContainer/Color1"]
+[node name="Label" type="Label" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer/Color1"]
 layout_mode = 2
 offset_right = 245.0
 offset_bottom = 99.0
 theme_override_font_sizes/font_size = 72
 text = "Color 1"
 
-[node name="Color3" type="Control" parent="Customizer/SubViewport/Control/HBoxContainer"]
+[node name="Color3" type="Control" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Customizer/SubViewport/Control/HBoxContainer/Color3"]
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer/Color3"]
 layout_mode = 2
 offset_left = 14.0
 offset_top = 95.0
@@ -380,13 +375,32 @@ offset_bottom = 302.0
 theme_override_font_sizes/font_size = 66
 text = "0"
 
-[node name="Label" type="Label" parent="Customizer/SubViewport/Control/HBoxContainer/Color3"]
+[node name="Label" type="Label" parent="Viewport2Din3D/Viewport/CanvasLayer/Control/HBoxContainer/Color3"]
 layout_mode = 2
 offset_right = 245.0
 offset_bottom = 99.0
 theme_override_font_sizes/font_size = 72
 text = "Color 3"
 
+[node name="Screen" type="MeshInstance3D" parent="Viewport2Din3D"]
+mesh = SubResource("QuadMesh_5vw27")
+surface_material_override/0 = SubResource("StandardMaterial3D_kek77")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Viewport2Din3D"]
+collision_layer = 5242881
+collision_mask = 0
+script = ExtResource("8_kek77")
+screen_size = Vector2(1.23, 1)
+viewport_size = Vector2(1280, 1280)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_efxa6")
+
+[connection signal="pointer_entered" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D" method="_on_pointer_entered"]
+[connection signal="pointer_exited" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D" method="_on_pointer_exited"]
+[connection signal="pointer_moved" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D/StaticBody3D" method="_on_pointer_moved"]
+[connection signal="pointer_pressed" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D/StaticBody3D" method="_on_pointer_pressed"]
+[connection signal="pointer_released" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D/StaticBody3D" method="_on_pointer_released"]
+
 [editable path="player"]
 [editable path="player/XRCamera3D/playerHead"]
-[editable path="player/LeftHandController/FunctionPointer"]

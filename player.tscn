@@ -85,6 +85,7 @@ show_laser = 2
 laser_length = 1
 show_target = true
 distance = 5.0
+collision_mask = 5242880
 
 [node name="RightHandController" type="XRController3D" parent="."]
 tracker = &"right_hand"
@@ -116,6 +117,7 @@ show_laser = 2
 laser_length = 1
 show_target = true
 distance = 5.0
+collision_mask = 5242880
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_2hs0m")]
 player_radius = 0.1
