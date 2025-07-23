@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://dlmfp2l58fl7r"]
+[gd_scene load_steps=25 format=3 uid="uid://dlmfp2l58fl7r"]
 
 [ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="1_gakxv"]
 [ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://1jgdy1tqdrkb" path="res://models/map_txt.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://djcxbb38qa54d" path="res://prefabs/gui.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="5_lquwl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w3gnw"]
 
@@ -261,5 +262,8 @@ size = Vector2i(3840, 2160)
 [node name="Camera3D" type="Camera3D" parent="Mirror/Node3D/SubViewport"]
 transform = Transform3D(-1, -1.50996e-07, -1.50996e-07, -1.50996e-07, 1, -1.32005e-14, -1.50996e-07, -9.59926e-15, 1, 6.03189, 1.19704, 9.33106)
 fov = 90.0
+
+[node name="StartXR" parent="." instance=ExtResource("5_lquwl")]
+physics_rate_multiplier = 1
 
 [editable path="player"]
