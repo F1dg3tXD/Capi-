@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://baxibhu64fhpx"]
-
-[resource]
-resource_name = "cable"
-albedo_color = Color(0.0849447, 0.0849447, 0.0849447, 1)
-roughness = 0.552786

@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d06y323fmky0k"]
-
-[ext_resource type="Texture2D" uid="uid://c5c3vyfq1s2uf" path="res://map/The_Entire_GTAG_Map_loglowres.png" id="1_jtyd5"]
-
-[resource]
-resource_name = "Tree Inside"
-cull_mode = 2
-albedo_texture = ExtResource("1_jtyd5")
-texture_filter = 2

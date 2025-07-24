@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://jbcyuyobu3j2"]
-
-[ext_resource type="Texture2D" uid="uid://dcsy0lib480ts" path="res://map/The_Entire_GTAG_Map_caverockwitharrows.png" id="1_1qia4"]
-
-[resource]
-resource_name = "caverockarrow1"
-albedo_texture = ExtResource("1_1qia4")
-roughness = 0.552786
