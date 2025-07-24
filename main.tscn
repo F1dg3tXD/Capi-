@@ -260,6 +260,7 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 
 
 [node name="GUI" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949158, 1, -9.74721)
+visible = false
 
 [node name="Mirror" type="Node3D" parent="."]
 transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 6.03189, 0.76629, 8.61845)
