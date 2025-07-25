@@ -1,5 +1,8 @@
 extends Node3D
 
+@export var player_scene: PackedScene
+@export var auto_spawn_player: bool = true
+
 @onready var debug_visuals: Node = $debug
 
 func _ready():
@@ -8,18 +11,19 @@ func _ready():
 	if Engine.is_editor_hint():
 		return
 
-	# Access the global Player scene from the Globals singleton
-	var player_scene: PackedScene = get_node("/root/Globals").Player
+	if not auto_spawn_player:
+		return
+
 	if player_scene == null:
-		push_error("Globals.PlayerScene is null. Make sure it's assigned in the Globals autoload.")
+		push_error("PlayerStart: 'player_scene' is not assigned.")
 		return
 
 	var player_instance = player_scene.instantiate()
-	get_tree().current_scene.add_child(player_instance)
+	get_tree().current_scene.call_deferred("add_child", player_instance)
 	player_instance.global_transform = global_transform
 
 func debug_draw(enabled: bool = true) -> void:
-	if debug_visuals and debug_visuals.is_valid():
+	if debug_visuals:
 		debug_visuals.visible = enabled
 
 func _enter_tree():

@@ -52,7 +52,7 @@ func center_player_on(p_transform : Transform3D):
 	# direction, we must offset this transform using the cameras transform.
 
 	# So we get our current camera transform in local space
-	var camera_transform = $XROrigin3D/XRCamera3D.transform
+	var camera_transform = $player_start.transform
 
 	# We obtain our view direction and zero out our height
 	var view_direction = camera_transform.basis.z
@@ -65,20 +65,20 @@ func center_player_on(p_transform : Transform3D):
 	transform.origin.y = 0
 
 	# And now update our origin point
-	$XROrigin3D.global_transform = (p_transform * transform.inverse()).orthonormalized()
+	#$splayer_start.global_transform = (p_transform * transform.inverse()).orthonormalized()
 
 func scene_loaded():
 	# Called after scene is loaded
 
 	# Make sure our camera becomes the current camera
-	$XROrigin3D/XRCamera3D.current = true
-	$XROrigin3D.current = true
+	#$XROrigin3D/XRCamera3D.current = true
+	#$XROrigin3D.current = true
 
 	# Center our player on our origin point
 	# Note, this means you can place the XROrigin3D point in the start
 	# position where you want the player to spawn, even if the player is
 	# physically halfway across the room.
-	center_player_on($XROrigin3D.global_transform)
+	center_player_on($player_start.global_transform)
 
 func scene_visible():
 	# Called after the scene becomes fully visible

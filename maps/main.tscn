@@ -1,13 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://dlmfp2l58fl7r"]
+[gd_scene load_steps=33 format=3 uid="uid://dlmfp2l58fl7r"]
 
-[ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="1_gakxv"]
-[ext_resource type="PackedScene" uid="uid://bqswlbg8wquus" path="res://player.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://1jgdy1tqdrkb" path="res://models/map_txt.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://djcxbb38qa54d" path="res://prefabs/gui.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://86qt721tg62c" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="6_5vw27"]
-[ext_resource type="Script" uid="uid://cwa2hwmaec075" path="res://scripts/color_picker_ui.gd" id="6_7mycd"]
-[ext_resource type="Script" uid="uid://bb5jrharrlihl" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="8_kek77"]
+[ext_resource type="Script" uid="uid://cy6au8g42bo6v" path="res://main.gd" id="1_3oufs"]
+[ext_resource type="PackedScene" uid="uid://djcxbb38qa54d" path="res://prefabs/gui.tscn" id="3_ofrm6"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="4_kppq5"]
+[ext_resource type="Script" uid="uid://86qt721tg62c" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="5_masfp"]
+[ext_resource type="Script" uid="uid://cwa2hwmaec075" path="res://scripts/color_picker_ui.gd" id="6_uhsqs"]
+[ext_resource type="PackedScene" uid="uid://d0s7hk6rtlfkw" path="res://editor/player_start.tscn" id="7_3oufs"]
+[ext_resource type="Script" uid="uid://cg2a407o3ldsk" path="res://editor/scripts/level_volume.gd" id="7_qt0it"]
+[ext_resource type="Script" uid="uid://bb5jrharrlihl" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="7_y6crx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w3gnw"]
 
@@ -71,33 +71,24 @@ albedo_texture = SubResource("ViewportTexture_1bvp3")
 resource_local_to_scene = true
 size = Vector2(1.23, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5vw27"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_qt0it"]
 viewport_path = NodePath("Viewport2Din3D/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ofrm6"]
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_5vw27")
+albedo_texture = SubResource("ViewportTexture_qt0it")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efxa6"]
 resource_local_to_scene = true
 size = Vector3(1.23, 1, 0.02)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_masfp"]
+size = Vector3(2.48798, 1, 0.871338)
+
 [node name="Main" type="Node3D"]
-script = ExtResource("1_gakxv")
-
-[node name="player" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
-
-[node name="XRToolsHandPusher" parent="player/LeftHandController" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
-
-[node name="XRToolsHandPusher" parent="player/RightHandController" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15813, 1.61414, 1.09067)
-
-[node name="XRMapLoader" parent="player/RightHandController" index="3"]
-visible = false
+script = ExtResource("1_3oufs")
 
 [node name="Env" type="Node3D" parent="."]
 
@@ -255,10 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.800232, 0, -9.61238)
 use_collision = true
 size = Vector3(2.60046, 1, 1)
 
-[node name="map_txt" parent="CSGBox3D" instance=ExtResource("3_h2yge")]
-transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0.284109, 0.500046)
-
-[node name="GUI" parent="." instance=ExtResource("4_1bvp3")]
+[node name="GUI" parent="." instance=ExtResource("3_ofrm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.949158, 1, -9.74721)
 visible = false
 
@@ -284,12 +272,12 @@ size = Vector2i(3840, 2160)
 transform = Transform3D(-1, -1.50996e-07, -1.50996e-07, -1.50996e-07, 1, -1.32005e-14, -1.50996e-07, -9.59926e-15, 1, 6.03189, 1.19704, 9.33106)
 fov = 90.0
 
-[node name="StartXR" parent="." instance=ExtResource("5_lquwl")]
+[node name="StartXR" parent="." instance=ExtResource("4_kppq5")]
 physics_rate_multiplier = 1
 
 [node name="Viewport2Din3D" type="Node3D" parent="."]
 transform = Transform3D(-0.894467, 0, 0.447135, 0, 1, 0, -0.447135, 0, -0.894467, 3.36698, 0.669196, 8.27808)
-script = ExtResource("6_5vw27")
+script = ExtResource("5_masfp")
 screen_size = Vector2(1.23, 1)
 viewport_size = Vector2(1280, 1280)
 transparent = 0
@@ -303,15 +291,14 @@ render_target_update_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Viewport2Din3D/Viewport"]
 
-[node name="Control" type="Control" parent="Viewport2Din3D/Viewport/CanvasLayer" node_paths=PackedStringArray("target_character")]
+[node name="Control" type="Control" parent="Viewport2Din3D/Viewport/CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_7mycd")
-target_character = NodePath("../../../../player/XRCamera3D/playerHead")
+script = ExtResource("6_uhsqs")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Viewport2Din3D/Viewport/CanvasLayer/Control"]
 layout_mode = 1
@@ -385,23 +372,36 @@ text = "Color 3"
 
 [node name="Screen" type="MeshInstance3D" parent="Viewport2Din3D"]
 mesh = SubResource("QuadMesh_5vw27")
-surface_material_override/0 = SubResource("StandardMaterial3D_kek77")
+surface_material_override/0 = SubResource("StandardMaterial3D_ofrm6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Viewport2Din3D"]
 collision_layer = 5242881
 collision_mask = 0
-script = ExtResource("8_kek77")
+script = ExtResource("7_y6crx")
 screen_size = Vector2(1.23, 1)
 viewport_size = Vector2(1280, 1280)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_efxa6")
 
+[node name="level_volume" type="Node3D" parent="Viewport2Din3D"]
+transform = Transform3D(-0.894466, 0, -0.447135, 0, 1, 0, 0.447135, 0, -0.894466, 10.3502, -0.169196, 15.0368)
+script = ExtResource("7_qt0it")
+target_scene = "uid://qbmx03iibuuu"
+
+[node name="Area3D" type="Area3D" parent="Viewport2Din3D/level_volume"]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewport2Din3D/level_volume/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0361023, 0.424982, 0.194702)
+shape = SubResource("BoxShape3D_masfp")
+
+[node name="player_start" parent="." instance=ExtResource("7_3oufs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.220303, 0)
+
 [connection signal="pointer_entered" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D" method="_on_pointer_entered"]
 [connection signal="pointer_exited" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D" method="_on_pointer_exited"]
 [connection signal="pointer_moved" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D/StaticBody3D" method="_on_pointer_moved"]
 [connection signal="pointer_pressed" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D/StaticBody3D" method="_on_pointer_pressed"]
 [connection signal="pointer_released" from="Viewport2Din3D/StaticBody3D" to="Viewport2Din3D/StaticBody3D" method="_on_pointer_released"]
-
-[editable path="player"]
-[editable path="player/XRCamera3D/playerHead"]
