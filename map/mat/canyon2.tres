@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cix628alwsv5l"]
-
-[ext_resource type="Texture2D" uid="uid://dlemgcnihjd4i" path="res://map/The_Entire_GTAG_Map_canyon2.png" id="1_nfroc"]
-
-[resource]
-resource_name = "canyon2"
-albedo_texture = ExtResource("1_nfroc")
-texture_filter = 2

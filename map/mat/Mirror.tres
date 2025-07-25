@@ -1,5 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccejk46sh5hok"]
-
-[resource]
-resource_name = "Mirror"
-cull_mode = 2

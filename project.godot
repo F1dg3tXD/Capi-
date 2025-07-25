@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Capi"
-run/main_scene="uid://dlmfp2l58fl7r"
+run/main_scene="uid://boewdfetyuvdm"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/image="uid://co4wufvyiq8fq"
 config/icon="uid://ca3stjn2puhhw"

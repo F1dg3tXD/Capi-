@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b3goflufq55hn"]
-
-[ext_resource type="Texture2D" uid="uid://yeohn4n3j4vl" path="res://map/The_Entire_GTAG_Map_canyon1.png" id="1_nfukr"]
-
-[resource]
-resource_name = "Canyon Wall"
-albedo_texture = ExtResource("1_nfukr")
-texture_filter = 2

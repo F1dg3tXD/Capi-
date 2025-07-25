@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://bmqg2mi4r0njd" path="res://addons/godot-xr-tools/functions/movement_sprint.gd" id="4_dw050"]
 [ext_resource type="PackedScene" uid="uid://dln5warmdwubl" path="res://addons/godot-xr-tools/hands/scenes/robo/left_hand_robo.tscn" id="5_nvl01"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="7_bwjto"]
-[ext_resource type="PackedScene" uid="uid://1ow23awdwfog" path="res://prefabs/button_stand.tscn" id="7_n7ghd"]
 [ext_resource type="Script" uid="uid://dvv0d3yhhk0lq" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="8_b26j0"]
 [ext_resource type="PackedScene" uid="uid://c08tmqkix4v2o" path="res://addons/godot-xr-tools/hands/scenes/robo/right_hand_robo.tscn" id="9_ivps1"]
 
@@ -32,6 +31,41 @@ jump_velocity = 5.0
 bounciness = 0.0
 bounce_threshold = 1.0
 metadata/_custom_type_script = "uid://dvv0d3yhhk0lq"
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_urp6f"]
+properties/0/path = NodePath("XRCamera3D:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("XRCamera3D:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("XRCamera3D:scale")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("LeftHandController:position")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("LeftHandController:rotation")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+properties/5/path = NodePath("LeftHandController:scale")
+properties/5/spawn = true
+properties/5/replication_mode = 1
+properties/6/path = NodePath("LeftHandController:pose")
+properties/6/spawn = true
+properties/6/replication_mode = 1
+properties/7/path = NodePath("RightHandController:position")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+properties/8/path = NodePath("RightHandController:rotation")
+properties/8/spawn = true
+properties/8/replication_mode = 1
+properties/9/path = NodePath("RightHandController:scale")
+properties/9/spawn = true
+properties/9/replication_mode = 1
+properties/10/path = NodePath("RightHandController:pose")
+properties/10/spawn = true
+properties/10/replication_mode = 1
 
 [node name="player" type="XROrigin3D" groups=["Player"]]
 
@@ -106,8 +140,6 @@ crouch_height = 0.8
 crouch_type = 1
 metadata/_custom_type_script = "uid://bnwr2qks6focx"
 
-[node name="XRMapLoader" parent="RightHandController" instance=ExtResource("7_n7ghd")]
-
 [node name="RightHand" parent="RightHandController" instance=ExtResource("9_ivps1")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
@@ -120,10 +152,15 @@ distance = 5.0
 collision_mask = 5242880
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_2hs0m")]
+platform_floor_layers = 4279173131
 player_radius = 0.1
 physics = SubResource("Resource_n7ghd")
 
 [node name="XRToolsMovementHandWalk" parent="." instance=ExtResource("4_1jxqw")]
-fling_multiplier = 0.5
-grav = 5.0
+grav = 7.0
 velocity_averages = 8
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_urp6f")
+
+[editable path="XRCamera3D/playerHead"]

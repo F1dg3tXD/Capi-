@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7s4hchde3q8w"]
-
-[ext_resource type="Texture2D" uid="uid://btjpnqja5y17t" path="res://map/The_Entire_GTAG_Map_cratetexture.png" id="1_2clpj"]
-
-[resource]
-resource_name = "crate.001"
-albedo_texture = ExtResource("1_2clpj")
-texture_filter = 2

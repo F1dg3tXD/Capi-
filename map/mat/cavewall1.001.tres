@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cjc2qgb8s8vrf"]
-
-[ext_resource type="Texture2D" uid="uid://c5s81jtatyk8l" path="res://map/The_Entire_GTAG_Map_cavewall1.png" id="1_f7wpx"]
-
-[resource]
-resource_name = "cavewall1.001"
-albedo_texture = ExtResource("1_f7wpx")
-texture_filter = 2
